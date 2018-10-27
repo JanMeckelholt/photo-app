@@ -18,7 +18,15 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
     </div>
-      <%= fields_for( :payment ) do |p| %>
+     <%= f.submit 'Sign up', :class => 'button right' %>
+  <% end %>
+</div>
+
+
+
+
+    
+     <!--  <%= fields_for( :payment ) do |p| %>
         <div class="row col-md-12">
           <div class="form-group col-md-4 no-left-padding">
             <%= p.label :card_number, "Card Number", data: {stripe: 'label'} %>
@@ -46,7 +54,5 @@
             </div>
           </div>
         </div>
-      <% end %>
-     <%= f.submit 'Sign up', :class => 'button right' %>
-  <% end %>
-</div>
+      <% end %> -->
+

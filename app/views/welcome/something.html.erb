@@ -1,1 +1,60 @@
 <h1>Something</h1>
+<div class="row">
+  <!--  <div class="plans clearfix"> -->
+      <div class="col-lg-3 col-lg-offset-3 card">
+        <div class="card-header">Premium Plan</div>
+          <div class="card-body">
+	        <p class="card-text">Join now!</p>
+	        <div class="features">
+	          <ul>
+	            <li>Unlimited Image Uploads</li>
+	            <li>Responsive design</li>
+	            <li>Access anywhere</li>
+	          </ul>
+	        </div>
+	       
+	        <p>
+	        	<%= form_tag charges_path do %>
+						  <article>
+						    <% if flash[:error].present? %>
+						      <div id="error_explanation">
+						        <p><%= flash[:error] %></p>
+						      </div>
+						    <% end %>
+						    <label class="amount">
+						      <span>Amount: $5.00</span>
+						    </label>
+						  </article>
+
+						  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+						          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+						          data-description="A month's subscription"
+						          data-amount="500"
+						          data-locale="auto"></script>
+						<% end %>
+					</p>
+
+
+	      </div>
+	  </div>
+      <div class="col-lg-3 card">
+        <div class="card-header">Amaze Plan</div>
+          <div class="card-body">
+	        <p class="card-text">Price: $20 </p>
+	        <div class="features">
+	          <ul>
+	            <li>Unlimited Image Uploads</li>
+	            <li>Responsive design</li>
+	            <li>Access anywhere</li>
+	            <li class='extra'>Unlimited projects</li>
+	          </ul>
+	        </div>
+	        <p>
+	          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary sign-up' %>
+	        </p>
+	    </div>
+      <!-- </div> -->
+    </div>
+  </div>
+
+

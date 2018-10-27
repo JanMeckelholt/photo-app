@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images
   get 'charges/new'
   get 'charges/create'
   devise_for :users #, :controllers => {:registrations => 'registrations'}
